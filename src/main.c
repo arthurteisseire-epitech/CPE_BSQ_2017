@@ -10,15 +10,8 @@
 
 int main(int ac, char **av)
 {
-	/*
-	char buffer[4096];
-	int size;
-	int fd;
-	bsq_t bsq;
-	*/
-
 	if (ac != 2)
 		return (84);
-	fs_open_file(av[1]);
+	fs_cat_x_bytes(av[1], 18);
 	return (0);
 }

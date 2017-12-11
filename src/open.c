@@ -18,3 +18,24 @@ int fs_open_file(char const *filepath)
 	}
 	return (fd);
 }
+
+int my_read(int fd, char *buffer, int size)
+{
+	int state = read(fd, buffer, size); 
+
+	if (state == -1) {
+		my_puterror("Error when reading file\n");
+		exit(84);
+	}
+	return (state);
+}
+
+void fs_cat_x_bytes(char const *filepath, int x)
+{
+	int fd;
+	char buffer[x];
+
+	fd = fs_open_file(filepath);
+	my_read(fd, buffer, x);
+	my_putstr(buffer);
+}
