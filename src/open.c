@@ -38,11 +38,15 @@ void cat_x_bytes(int fd, int x)
 	my_putstr(buffer);
 }
 
-void cat_first_line(char const *filepath, int fd)
+void cat_first_line(char const *filepath)
 {
 	int i = 0;
+	int state;
+	int fd = my_open(filepath);
+	char buffer[4096];
 
-	while (filepath[i] != '\n' && filepath[i] != '\0')
-		i++;
-	cat_x_bytes(fd, i);
+	while ((state = read(fd, buffer, 1)) && buffer[i] != '\n')
+		my_putchar(buffer[i]);
+	//cat_x_bytes(fd, i);
+	close(fd);
 }

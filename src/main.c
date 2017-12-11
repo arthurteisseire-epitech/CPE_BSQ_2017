@@ -14,7 +14,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 		return (84);
-	cat_first_line(av[1], fd);
+	cat_first_line(av[1]);
 	close(fd);
 	return (0);
 }
