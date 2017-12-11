@@ -22,5 +22,6 @@ typedef struct bsq {
 } bsq_t;
 
 void local_bsq(bsq_t *bsq, int row, int col);
+void set_pos(pos_t *pos, int row, int col);
 
 #endif
