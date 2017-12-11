@@ -10,10 +10,15 @@
 
 int main(int ac, char **av)
 {
+	/*
+	char buffer[4096];
+	int size;
+	int fd;
 	bsq_t bsq;
+	*/
 
 	if (ac != 2)
 		return (84);
-	bsq.nb_row = my_atoi(av[1]);
+	fs_open_file(av[1]);
 	return (0);
 }

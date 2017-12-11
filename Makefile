@@ -10,7 +10,8 @@ INC	=	$(realpath include)
 DLIB	=	$(realpath lib/my)/
 LIB	=	my
 LIBS	=	-L$(DLIB) -l$(LIB)
-SRC     =	$(DSRC)main.c
+SRC     =	$(DSRC)main.c \
+		$(DSRC)open.c
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -g
 OBJ	=	$(SRC:.c=.o)
 NAME	=	bsq

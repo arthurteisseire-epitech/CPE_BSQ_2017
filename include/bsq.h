@@ -8,6 +8,11 @@
 #ifndef BSQ_H
 #define BSQ_H
 
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 typedef struct pos {
 	int x;
 	int y;
@@ -23,5 +28,7 @@ typedef struct bsq {
 
 void local_bsq(bsq_t *bsq, int row, int col);
 void set_pos(pos_t *pos, int row, int col);
+
+int fs_open_file(char const *filepath);
 
 #endif
