@@ -29,8 +29,9 @@ typedef struct bsq {
 void local_bsq(bsq_t *bsq, int row, int col);
 void set_pos(pos_t *pos, int row, int col);
 
-int fs_open_file(char const *filepath);
-void fs_cat_x_bytes(char const *filepath, int x);
+int my_open(char const *filepath);
+void cat_x_bytes(int fd, int x);
 int my_read(int fd, char *buffer, int size);
+void cat_first_line(char const *filepath, int fd);
 
 #endif

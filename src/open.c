@@ -8,7 +8,7 @@
 #include "my.h"
 #include "bsq.h"
 
-int fs_open_file(char const *filepath)
+int my_open(char const *filepath)
 {
 	int fd = open(filepath, O_RDONLY);
 
@@ -30,12 +30,19 @@ int my_read(int fd, char *buffer, int size)
 	return (state);
 }
 
-void fs_cat_x_bytes(char const *filepath, int x)
+void cat_x_bytes(int fd, int x)
 {
-	int fd;
 	char buffer[x];
 
-	fd = fs_open_file(filepath);
 	my_read(fd, buffer, x);
 	my_putstr(buffer);
+}
+
+void cat_first_line(char const *filepath, int fd)
+{
+	int i = 0;
+
+	while (filepath[i] != '\n' && filepath[i] != '\0')
+		i++;
+	cat_x_bytes(fd, i);
 }
