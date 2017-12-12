@@ -17,7 +17,7 @@ SRC     =	$(DSRC)main.c \
 		$(DSRC)free.c \
 		$(DSRC)local_bsq.c \
 		$(DSRC)bsq.c
-CFLAGS	=	-Wall -W -Wextra -I$(INC) -g
+CFLAGS	=	-Wall -W -Wextra -I$(INC)
 OBJ	=	$(SRC:.c=.o)
 NAME	=	bsq
 
