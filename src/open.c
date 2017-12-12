@@ -42,7 +42,7 @@ int get_first_line(char const *filepath)
 {
 	int i = 0;
 	int fd = my_open(filepath);
-	char buffer[4096];
+	char buffer[11];
 
 	while ((my_read(fd, &buffer[i], 1)) && buffer[i] != '\n')
 		i++;
