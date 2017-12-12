@@ -31,6 +31,6 @@ void local_bsq(bsq_t *bsq, int row, int col)
 
 void set_pos(pos_t *pos, int row, int col)
 {
-	pos->x = col;
-	pos->y = row;
+	pos->x = row;
+	pos->y = col;
 }

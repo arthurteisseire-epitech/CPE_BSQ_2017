@@ -19,7 +19,7 @@ void my_bsq(bsq_t *bsq)
 
 void put_x_square(bsq_t *bsq)
 {
-	for (int x = bsq->pos.x; x < bsq->size; x++)
-		for (int y = bsq->pos.y; y < bsq->size; y++)
+	for (int x = bsq->pos.x; x < bsq->pos.x + bsq->size; x++)
+		for (int y = bsq->pos.y; y < bsq->pos.y + bsq->size; y++)
 			bsq->map[x][y] = 'x';
 }
