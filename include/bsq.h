@@ -13,6 +13,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#define SIZE 4096
+
 typedef struct pos {
 	int x;
 	int y;
@@ -32,6 +34,6 @@ void set_pos(pos_t *pos, int row, int col);
 int my_open(char const *filepath);
 void cat_x_bytes(int fd, int x);
 int my_read(int fd, char *buffer, int size);
-int get_nb_row(char const *filepath);
+int get_nb_row(int *fd);
 
 #endif

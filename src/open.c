@@ -38,15 +38,13 @@ void cat_x_bytes(int fd, int x)
 	my_putstr(buffer);
 }
 
-int get_nb_row(char const *filepath)
+int get_nb_row(int *fd)
 {
 	int i = 0;
-	int fd = my_open(filepath);
 	char buffer[11];
 
-	while ((my_read(fd, &buffer[i], 1)) && buffer[i] != '\n')
+	while ((my_read(*fd, &buffer[i], 1)) && buffer[i] != '\n')
 		i++;
-	close(fd);
 	buffer[i] = '\0';
 	return (my_atoi(buffer));
 }
