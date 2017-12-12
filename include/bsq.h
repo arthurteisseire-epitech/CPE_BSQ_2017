@@ -13,7 +13,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#define SIZE 20
+#define SIZE 4096
 
 typedef struct pos {
 	int x;
