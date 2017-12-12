@@ -24,7 +24,7 @@ void local_bsq(bsq_t *bsq, int row, int col)
 		x++;
 		y = col;
 	}
-	size = (size_y < row - x ? size_y : row - x);
+	size = (size_y < x - row ? size_y : x - row);
 	if (size > bsq->size) {
 		bsq->size = size;
 		set_pos(&bsq->pos, row, col);
