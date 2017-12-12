@@ -9,7 +9,6 @@
 
 void local_bsq(bsq_t *bsq, int row, int col)
 {
-	int size;
 	int size_y = bsq->nb_col;
 	int size_x = bsq->nb_row;
 	int x = row;
@@ -30,13 +29,6 @@ void local_bsq(bsq_t *bsq, int row, int col)
 		x++;
 		y = col;
 	}
-	/*
-	size = (size_y < x - row ? size_y : x - row);
-	if (size > bsq->size) {
-		bsq->size = size;
-		set_pos(&bsq->pos, row, col);
-	}
-	*/
 }
 
 void set_pos(pos_t *pos, int row, int col)

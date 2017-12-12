@@ -45,6 +45,7 @@ void print_map(bsq_t *bsq);
 void free_all(bsq_t *bsq, char *content);
 
 void my_bsq(bsq_t *bsq);
+void find_biggest_square(bsq_t *bsq, int row);
 void put_x_square(bsq_t *bsq);
 
 #endif
