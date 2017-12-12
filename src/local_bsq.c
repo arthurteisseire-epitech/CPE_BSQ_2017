@@ -20,7 +20,7 @@ void local_bsq(bsq_t *bsq, int row, int col)
 		if (y - col < size_y)
 			size_y = y - col;
 		if (y < bsq->size)
-			break;
+			return;
 		x++;
 		y = col;
 	}
