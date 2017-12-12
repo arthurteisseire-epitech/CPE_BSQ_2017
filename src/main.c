@@ -10,11 +10,13 @@
 
 int main(int ac, char **av)
 {
+	bsq_t bsq;
 	int fd = my_open(av[1]);
 
 	if (ac != 2)
 		return (84);
-	cat_first_line(av[1]);
+	bsq.nb_row = get_first_line(av[1]);
+	printf("%d", bsq.nb_row);
 	close(fd);
 	return (0);
 }
