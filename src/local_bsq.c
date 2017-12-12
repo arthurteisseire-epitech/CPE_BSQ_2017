@@ -17,10 +17,10 @@ void local_bsq(bsq_t *bsq, int row, int col)
 	while (x < bsq->nb_row && bsq->map[x][y] != 'o') {
 		while (bsq->map[x][y] == '.')
 			y++;
+		if (y - col < bsq->size)
+			return;
 		if (y - col < size_y)
 			size_y = y - col;
-		if (y < bsq->size)
-			return;
 		x++;
 		y = col;
 	}
