@@ -19,7 +19,7 @@ int get_nb_row(int *fd)
 	return (my_atoi(buffer));
 }
 
-char *fill_map(int fd)
+char *get_file_content(int fd)
 {
 	int size;
 	char *map = "";

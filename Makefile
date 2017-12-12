@@ -12,7 +12,8 @@ LIB	=	my
 LIBS	=	-L$(DLIB) -l$(LIB)
 SRC     =	$(DSRC)main.c \
 		$(DSRC)open.c \
-		$(DSRC)fill.c
+		$(DSRC)fill.c \
+		$(DSRC)map.c
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -g
 OBJ	=	$(SRC:.c=.o)
 NAME	=	bsq

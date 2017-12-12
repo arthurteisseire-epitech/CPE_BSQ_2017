@@ -7,20 +7,21 @@
 
 #include "my.h"
 #include "bsq.h"
+#include <stdio.h>
 
 int main(int ac, char **av)
 {
 	bsq_t bsq;
-	char *map;
+	char *content;
 	int fd = my_open(av[1]);
 
 	if (ac != 2)
 		return (84);
 	bsq.nb_row = get_nb_row(&fd);
-	//printf("%d", bsq.nb_row);
-	map = fill_map(fd);
-	my_putstr(map);
-	free(map);
+	content = get_file_content(fd);
+	bsq.map = str_to_map(&bsq, content);
+	print_map(&bsq);
+	free(content);
 	close(fd);
 	return (0);
 }

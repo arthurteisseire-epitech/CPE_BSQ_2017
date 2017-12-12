@@ -29,11 +29,3 @@ int my_read(int fd, char *buffer, int size)
 	}
 	return (state);
 }
-
-void cat_x_bytes(int fd, int x)
-{
-	char buffer[x];
-
-	my_read(fd, buffer, x);
-	my_putstr(buffer);
-}
