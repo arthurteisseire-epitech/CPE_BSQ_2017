@@ -37,14 +37,3 @@ void cat_x_bytes(int fd, int x)
 	my_read(fd, buffer, x);
 	my_putstr(buffer);
 }
-
-int get_nb_row(int *fd)
-{
-	int i = 0;
-	char buffer[11];
-
-	while ((my_read(*fd, &buffer[i], 1)) && buffer[i] != '\n')
-		i++;
-	buffer[i] = '\0';
-	return (my_atoi(buffer));
-}

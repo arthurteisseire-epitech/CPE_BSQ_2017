@@ -11,15 +11,16 @@
 int main(int ac, char **av)
 {
 	bsq_t bsq;
-	char buffer[SIZE];
+	char *map = "";
 	int fd = my_open(av[1]);
 
 	if (ac != 2)
 		return (84);
 	bsq.nb_row = get_nb_row(&fd);
 	//printf("%d", bsq.nb_row);
-	my_read(fd, buffer, SIZE);
-	my_putstr(buffer);
+	fill_map(map, &fd);
+	my_putstr(map);
+	//free(map);
 	close(fd);
 	return (0);
 }
