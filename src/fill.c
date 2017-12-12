@@ -23,10 +23,15 @@ char *fill_map(int *fd)
 {
 	int size;
 	char *map = "";
+	char *tmp;
 	char buffer[SIZE];
 
-	while ((size = my_read(*fd, buffer, SIZE)) != 0)
+	while ((size = my_read(*fd, buffer, SIZE)) != 0) {
+		tmp = map;
 		map = concat(map, buffer, size);
+		if (*tmp != '\0')
+			free(tmp);
+	}
 	return (map);
 }
 

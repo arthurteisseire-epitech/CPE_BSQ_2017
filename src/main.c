@@ -20,6 +20,7 @@ int main(int ac, char **av)
 	//printf("%d", bsq.nb_row);
 	map = fill_map(&fd);
 	my_putstr(map);
+	free(map);
 	close(fd);
 	return (0);
 }
