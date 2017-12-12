@@ -38,7 +38,7 @@ void cat_x_bytes(int fd, int x)
 	my_putstr(buffer);
 }
 
-int get_first_line(char const *filepath)
+int get_nb_row(char const *filepath)
 {
 	int i = 0;
 	int fd = my_open(filepath);

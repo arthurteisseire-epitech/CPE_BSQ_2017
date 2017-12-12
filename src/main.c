@@ -15,7 +15,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 		return (84);
-	bsq.nb_row = get_first_line(av[1]);
+	bsq.nb_row = get_nb_row(av[1]);
 	printf("%d", bsq.nb_row);
 	close(fd);
 	return (0);
