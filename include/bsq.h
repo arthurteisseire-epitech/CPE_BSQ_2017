@@ -35,7 +35,7 @@ int my_open(char const *filepath);
 void cat_x_bytes(int fd, int x);
 int my_read(int fd, char *buffer, int size);
 int get_nb_row(int *fd);
-char *fill_map(int *fd);
+char *fill_map(int fd);
 char *concat(char *str1, char *str2, int len_src);
 
 #endif

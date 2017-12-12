@@ -18,7 +18,7 @@ int main(int ac, char **av)
 		return (84);
 	bsq.nb_row = get_nb_row(&fd);
 	//printf("%d", bsq.nb_row);
-	map = fill_map(&fd);
+	map = fill_map(fd);
 	my_putstr(map);
 	free(map);
 	close(fd);
