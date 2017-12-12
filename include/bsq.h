@@ -42,4 +42,6 @@ int get_len_line(char *str);
 char **str_to_map(bsq_t *bsq, char *str);
 void print_map(bsq_t *bsq);
 
+void free_all(bsq_t *bsq, char *content);
+
 #endif

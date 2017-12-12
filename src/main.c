@@ -21,7 +21,7 @@ int main(int ac, char **av)
 	content = get_file_content(fd);
 	bsq.map = str_to_map(&bsq, content);
 	print_map(&bsq);
-	free(content);
+	free_all(&bsq, content);
 	close(fd);
 	return (0);
 }
