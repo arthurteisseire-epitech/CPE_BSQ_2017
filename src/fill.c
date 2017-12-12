@@ -19,32 +19,29 @@ int get_nb_row(int *fd)
 	return (my_atoi(buffer));
 }
 
-void fill_map(char *map, int *fd)
+char *fill_map(int *fd)
 {
 	int size;
+	char *map = "";
 	char buffer[SIZE];
 
 	while ((size = my_read(*fd, buffer, SIZE)) != 0)
-		map = concat(map, buffer);
+		map = concat(map, buffer, size);
+	return (map);
 }
 
-char *concat(char *str1, char *str2)
+char *concat(char *dest, char *src, int len_src)
 {
-	int len1 = my_strlen(str1);
-	int len2 = my_strlen(str2);
-	char *res = malloc(sizeof(char) * (len1 + len2 + 1));
+	int len_dest = my_strlen(dest);
+	char *res = malloc(sizeof(char) * (len_dest + len_src + 1));
 	int i = 0;
 
-	while (*str1 != '\0') {
-		res[i] = *str1;
-		str1++;
+	src[len_src - 1] = '\0';
+	my_strcpy(res, src);
+	while (i < len_src) {
+		res[len_dest + i] = src[i];
 		i++;
 	}
-	while (*str2 != '\0') {
-		res[i] = *str2;
-		str2++;
-		i++;
-	}
-	res[i] = '\0';
+	res[len_dest + i] = '\0';
 	return (res);
 }
