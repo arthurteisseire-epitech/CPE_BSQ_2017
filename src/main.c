@@ -17,10 +17,12 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 		return (84);
+	bsq.size = 0;
 	bsq.nb_row = get_nb_row(&fd);
 	content = get_file_content(fd);
 	bsq.map = str_to_map(&bsq, content);
 	print_map(&bsq);
+	local_bsq(&bsq, 0, 0);
 	free_all(&bsq, content);
 	close(fd);
 	return (0);
