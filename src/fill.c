@@ -41,8 +41,7 @@ char *concat(char *dest, char *src, int len_src)
 	char *res = malloc(sizeof(char) * (len_dest + len_src + 1));
 	int i = 0;
 
-	src[len_src - 1] = '\0';
-	my_strcpy(res, src);
+	my_strcpy(res, dest);
 	while (i < len_src) {
 		res[len_dest + i] = src[i];
 		i++;
