@@ -21,7 +21,7 @@ int my_open(char const *filepath)
 
 int my_read(int fd, char *buffer, int size)
 {
-	int state = read(fd, buffer, size); 
+	int state = read(fd, buffer, size);
 
 	if (state == -1) {
 		my_puterror("Error when reading file\n");
